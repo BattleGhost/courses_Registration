@@ -10,6 +10,7 @@ public class View {
     public View(Locale locale) {
         this.locale = locale;
         this.resourceBundle = ResourceBundle.getBundle(GlobalConstants.BUNDLE_NAME, this.locale);
+        UnpackedConstants.createConstants(this);
     }
 
     public void showMessage(String message) {
