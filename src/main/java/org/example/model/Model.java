@@ -15,7 +15,7 @@ public class Model {
         availableGroups = NoteGroup.getAvailableGroups();
     }
 
-    public void createNoteInNotebook(String surname, String name, String nickname, String comment, NoteGroup group,
+    public void createNoteInNotebook(String surname, String name, String nickname, String comment, String group,
                                      String homePhone, String cellPhoneFirst, String cellPhoneSecond, String email,
                                      String skype, String zipCode, String city, String street, String building,
                                      String apartments) {
@@ -25,5 +25,9 @@ public class Model {
 
     public List<String> getAvailableGroups() {
         return availableGroups;
+    }
+
+    public String notebookAsString() {
+        return notebook.toString();
     }
 }

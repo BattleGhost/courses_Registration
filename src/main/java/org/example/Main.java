@@ -14,7 +14,6 @@ public class Main
         View view = new View(locale);
         Model model = new Model();
         Controller controller = new Controller(model, view);
-
-
+        controller.processUser();
     }
 }

@@ -1,5 +1,6 @@
 package org.example.view;
 
+import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -27,6 +28,15 @@ public class View {
             sb.append(string);
         }
         return sb.toString();
+    }
+
+    public String stringifyList(List<?> list) {
+        StringBuilder sb = new StringBuilder();
+        for (Object item : list) {
+            sb.append(item).append(UnpackedConstants.MESSAGE_CONSTANT_COMMA).
+                    append(UnpackedConstants.MESSAGE_CONSTANT_SPACE);
+        }
+        return sb.substring(0,sb.length()-2);
     }
 
 }
