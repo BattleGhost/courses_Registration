@@ -2,6 +2,8 @@ package org.example.view;
 
 public interface GlobalConstants {
     String BUNDLE_NAME = "text_data";
+    String DEFAULT_LOCALE_LANGUAGE = "en";
+    String DEFAULT_LOCALE_COUNTRY = "EN";
 
     String MESSAGE_INPUT_REQUEST = "message.input.request";
     String MESSAGE_INPUT_SURNAME = "message.input.surname";

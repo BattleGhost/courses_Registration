@@ -51,6 +51,10 @@ public class UnpackedConstants {
     public static String INPUT_ADDRESS_BUILDING_REGEXP;
     public static String INPUT_ADDRESS_APARTMENT_REGEXP;
 
+    static {
+        createConstants(new View());
+    }
+
     public static void createConstants(View view) {
 
         MESSAGE_INPUT_REQUEST = view.getTextFromBundle(GlobalConstants.MESSAGE_INPUT_REQUEST);

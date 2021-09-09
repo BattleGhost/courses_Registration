@@ -15,7 +15,7 @@ public class View {
     }
 
     public View() {
-        this(new Locale("en", "EN"));
+        this(new Locale(GlobalConstants.DEFAULT_LOCALE_LANGUAGE, GlobalConstants.DEFAULT_LOCALE_COUNTRY));
     }
 
     public void showMessage(String message) {
