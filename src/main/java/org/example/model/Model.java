@@ -1,5 +1,6 @@
 package org.example.model;
 
+import org.example.model.exceptions.LoginIsAlreadyTakenException;
 import org.example.model.notebook.NoteGroup;
 import org.example.model.notebook.Notebook;
 
@@ -18,7 +19,7 @@ public class Model {
     public void createNoteInNotebook(String surname, String name, String nickname, String comment, String group,
                                      String homePhone, String cellPhoneFirst, String cellPhoneSecond, String email,
                                      String skype, String zipCode, String city, String street, String building,
-                                     String apartments) {
+                                     String apartments) throws LoginIsAlreadyTakenException {
         notebook.createNote(surname, name, nickname, comment, group, homePhone, cellPhoneFirst, cellPhoneSecond,
                 email, skype, zipCode, city, street, building, apartments);
     }

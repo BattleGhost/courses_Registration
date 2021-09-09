@@ -50,6 +50,10 @@ public class Note {
         this.changeDate = new Date();
     }
 
+    public String getNickname() {
+        return nickname;
+    }
+
     public static String createFullName(String name, String surname) {
         StringBuilder sb = new StringBuilder(surname);
         sb.append(UnpackedConstants.MESSAGE_CONSTANT_SPACE).append(name.charAt(0))

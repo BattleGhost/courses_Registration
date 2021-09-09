@@ -20,6 +20,7 @@ public class UnpackedConstants {
 
     public static String MESSAGE_OUTPUT_WRONG_DATA;
     public static String MESSAGE_OUTPUT_WRONG_GROUP;
+    public static String MESSAGE_OUTPUT_WRONG_LOGIN_TAKEN;
     public static String MESSAGE_OUTPUT_AVAILABLE_GROUPS;
     public static String MESSAGE_OUTPUT_SUCCESS;
 
@@ -70,6 +71,7 @@ public class UnpackedConstants {
         MESSAGE_INPUT_ADDRESS_APARTMENT = view.getTextFromBundle(GlobalConstants.MESSAGE_INPUT_ADDRESS_APARTMENT);
         MESSAGE_OUTPUT_WRONG_DATA = view.getTextFromBundle(GlobalConstants.MESSAGE_OUTPUT_WRONG_DATA);
         MESSAGE_OUTPUT_WRONG_GROUP = view.getTextFromBundle(GlobalConstants.MESSAGE_OUTPUT_WRONG_GROUP);
+        MESSAGE_OUTPUT_WRONG_LOGIN_TAKEN = view.getTextFromBundle(GlobalConstants.MESSAGE_OUTPUT_WRONG_LOGIN_TAKEN);
         MESSAGE_OUTPUT_AVAILABLE_GROUPS = view.getTextFromBundle(GlobalConstants.MESSAGE_OUTPUT_AVAILABLE_GROUPS);
         MESSAGE_OUTPUT_SUCCESS = view.getTextFromBundle(GlobalConstants.MESSAGE_OUTPUT_SUCCESS);
         MESSAGE_CONSTANT_SPACE = view.getTextFromBundle(GlobalConstants.MESSAGE_CONSTANT_SPACE);

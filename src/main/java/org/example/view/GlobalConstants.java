@@ -22,6 +22,7 @@ public interface GlobalConstants {
 
     String MESSAGE_OUTPUT_WRONG_DATA = "message.output.wrong.data";
     String MESSAGE_OUTPUT_WRONG_GROUP = "message.output.wrong.group";
+    String MESSAGE_OUTPUT_WRONG_LOGIN_TAKEN = "message.output.wrong.login.taken";
     String MESSAGE_OUTPUT_AVAILABLE_GROUPS = "message.output.available.groups";
     String MESSAGE_OUTPUT_SUCCESS = "message.output.success";
 

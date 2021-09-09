@@ -1,12 +1,11 @@
 package org.example.controller;
 
 import org.example.model.Model;
+import org.example.model.exceptions.LoginIsAlreadyTakenException;
 import org.example.view.UnpackedConstants;
 import org.example.view.View;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Controller implements NecessaryData{
     private Model model;
@@ -20,12 +19,31 @@ public class Controller implements NecessaryData{
     public void processUser() {
         Scanner scanner = new Scanner(System.in);
         model.createNotebook();
-        Map<String, String> userData = getNoteData(scanner);
-        sendDataToModel(userData);
+        addNotes(scanner, 2);
         showNotebook();
     }
 
-    public Map<String, String> getNoteData (Scanner scanner) {
+    public void addNotes(Scanner scanner, int numberOfNotesToAdd) {
+        for (int i = 0; i < numberOfNotesToAdd; i++) {
+            boolean userDataAdded = false;
+            Map<String, String> userData = getNoteData(scanner, necessaryData);
+
+            while (!userDataAdded) {
+                userDataAdded = true;
+                try {
+                    sendDataToModel(userData);
+                } catch (LoginIsAlreadyTakenException e) {
+                    e.printStackTrace();
+                    userDataAdded = false;
+                    String key = TechnicalNames.TECHNICAL_NICKNAME;
+                    userData.put(key, getNoteData(scanner, Collections.singletonList(key)).get(key));
+                }
+            }
+            view.showMessage(UnpackedConstants.MESSAGE_OUTPUT_SUCCESS);
+        }
+    }
+
+    public Map<String, String> getNoteData (Scanner scanner, List<String> necessaryData) {
         Map<String, String> userData = new HashMap<>();
         for (String key : necessaryData) {
             String userInput;
@@ -50,7 +68,6 @@ public class Controller implements NecessaryData{
             } while(!isCorrect);
             userData.put(key, userInput);
         }
-        view.showMessage(UnpackedConstants.MESSAGE_OUTPUT_SUCCESS);
         return userData;
     }
 
@@ -64,7 +81,7 @@ public class Controller implements NecessaryData{
         return scanner.nextLine();
     }
 
-    public void sendDataToModel(Map<String, String> userData) {
+    public void sendDataToModel(Map<String, String> userData) throws LoginIsAlreadyTakenException {
         model.createNoteInNotebook(
                 userData.get(TechnicalNames.TECHNICAL_SURNAME),
                 userData.get(TechnicalNames.TECHNICAL_MAME),

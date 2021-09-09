@@ -14,6 +14,10 @@ public class View {
         UnpackedConstants.createConstants(this);
     }
 
+    public View() {
+        this(new Locale("en", "EN"));
+    }
+
     public void showMessage(String message) {
         System.out.println(message);
     }
